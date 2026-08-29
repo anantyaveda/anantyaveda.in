@@ -177,9 +177,6 @@
       <div class="tablist" role="tablist" aria-label="Product categories">
         <button class="tab" role="tab" aria-selected="true" data-cat="all">All</button>
         <button class="tab" role="tab" aria-selected="false" data-cat="skin">Skin Care</button>
-        <button class="tab" role="tab" aria-selected="false" data-cat="face">Face Care</button>
-        <button class="tab" role="tab" aria-selected="false" data-cat="hair">Hair Care</button>
-        <button class="tab" role="tab" aria-selected="false" data-cat="body">Body Care</button>
       </div>
       <div class="grid" id="productGrid"></div>
     </section>
@@ -210,16 +207,7 @@
         { name: 'Lip Balm', cat: 'skin', desc: 'Nourishing herbal lip balm that softens and protects dry, chapped lips.', price: '₹199' },
         { name: 'Manjishtha Mulethi Cream', cat: 'skin', desc: 'Brightening cream with manjishtha and liquorice (mulethi) for even, glowing skin tone.', price: '30g ₹599 · 50g ₹699' },
         { name: 'Manjishtha Lip Balm', cat: 'skin', desc: 'Tinted herbal lip balm enriched with manjishtha for naturally rosy lips.', price: '₹199' },
-        { name: 'Manjishtha Soap', cat: 'skin', desc: 'Ayurvedic cleansing bar with manjishtha to clarify and brighten the skin.', price: '₹199' },
-        { name: 'Kumkumadi Glow Serum', cat: 'face', desc: 'Ayurvedic saffron-infused facial serum for radiant, even-toned skin.', price: '₹699' },
-        { name: 'Rose & Aloe Face Wash', cat: 'face', desc: 'Gentle daily cleanser with rose water and soothing aloe vera.', price: '₹349' },
-        { name: 'Neem-Turmeric Face Pack', cat: 'face', desc: 'Purifying clay mask to calm breakouts and brighten the complexion.', price: '₹499' },
-        { name: 'Bhringraj Hair Oil', cat: 'hair', desc: 'Cold-pressed herbal oil that strengthens roots and reduces hair fall.', price: '₹599' },
-        { name: 'Amla Shikakai Shampoo', cat: 'hair', desc: 'Sulfate-free cleanser for soft, nourished, and frizz-free hair.', price: '₹399' },
-        { name: 'Hibiscus Hair Mask', cat: 'hair', desc: 'Deep-conditioning mask for shine, volume, and scalp health.', price: '₹549' },
-        { name: 'Shea & Coconut Body Butter', cat: 'body', desc: 'Rich moisturizer that repairs dry skin and locks in hydration.', price: '₹529' },
-        { name: 'Ubtan Body Scrub', cat: 'body', desc: 'Exfoliating gram-flour scrub for smooth, glowing skin.', price: '₹459' },
-        { name: 'Lemongrass Body Wash', cat: 'body', desc: 'Refreshing daily wash with antibacterial natural essences.', price: '₹379' }
+        { name: 'Manjishtha Soap', cat: 'skin', desc: 'Ayurvedic cleansing bar with manjishtha to clarify and brighten the skin.', price: '₹199' }
       ];
       var grid = document.getElementById('productGrid');
       function render(cat) {
