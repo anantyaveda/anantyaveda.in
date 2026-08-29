@@ -61,6 +61,20 @@
       font-size: 0.85rem;
       color: var(--muted);
     }
+    .social {
+      margin-top: 1.5rem;
+    }
+    .social-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease, opacity 0.15s ease;
+    }
+    .social-link:hover { border-color: var(--accent); opacity: 0.8; }
+    .social-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     .theme-toggle {
       position: fixed;
       top: 1rem;
@@ -99,6 +113,9 @@
     <h1><span class="domain">anantyaveda</span>.in</h1>
     <p class="tagline">Our website is currently under construction.<br />Please check back soon.</p>
     <span class="badge">Under Construction</span>
+    <div class="social">
+      <a class="social-link" href="https://instagram.com/anantyaveda_9" target="_blank" rel="noopener noreferrer">Instagram: @anantyaveda_9</a>
+    </div>
     <div class="footer">&copy; <span id="year"></span> anantyaveda.in</div>
   </main>
   <script>
