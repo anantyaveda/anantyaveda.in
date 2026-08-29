@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anantya Veda — Coming Soon</title>
+  <meta name="description" content="anantyaveda.in — website under construction." />
+  <style>
+    :root {
+      --bg: #0f1419;
+      --fg: #f5f0e6;
+      --accent: #c8a24b;
+      --muted: #9aa3ad;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at 50% 30%, #1a2330 0%, var(--bg) 70%);
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .card { max-width: 540px; }
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .domain { color: var(--accent); }
+    p.tagline {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .footer {
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1><span class="domain">anantyaveda</span>.in</h1>
+    <p class="tagline">Our website is currently under construction.<br />Please check back soon.</p>
+    <span class="badge">Under Construction</span>
+    <div class="footer">&copy; <span id="year"></span> anantyaveda.in</div>
+  </main>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
