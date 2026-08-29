@@ -7,7 +7,15 @@
   <meta name="description" content="anantyaveda.in — website under construction." />
   <style>
     :root {
+      --bg: #f7f4ec;
+      --bg-core: #ffffff;
+      --fg: #1a1f26;
+      --accent: #b8860b;
+      --muted: #5b6470;
+    }
+    html.dark {
       --bg: #0f1419;
+      --bg-core: #1a2330;
       --fg: #f5f0e6;
       --accent: #c8a24b;
       --muted: #9aa3ad;
@@ -16,7 +24,7 @@
     html, body { height: 100%; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: radial-gradient(circle at 50% 30%, #1a2330 0%, var(--bg) 70%);
+      background: radial-gradient(circle at 50% 30%, var(--bg-core) 0%, var(--bg) 70%);
       color: var(--fg);
       display: flex;
       align-items: center;
@@ -53,15 +61,65 @@
       font-size: 0.85rem;
       color: var(--muted);
     }
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      cursor: pointer;
+      font-size: 1.2rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .theme-toggle:hover { transform: scale(1.08); background: rgba(184,134,11,0.1); }
+    .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   </style>
+  <script>
+    /* Apply saved/preferred theme before paint to avoid flash of wrong theme */
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme"></button>
   <main class="card">
     <h1><span class="domain">anantyaveda</span>.in</h1>
     <p class="tagline">Our website is currently under construction.<br />Please check back soon.</p>
     <span class="badge">Under Construction</span>
     <div class="footer">&copy; <span id="year"></span> anantyaveda.in</div>
   </main>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      var btn = document.getElementById('themeToggle');
+      function sync() {
+        var isDark = document.documentElement.classList.contains('dark');
+        btn.textContent = isDark ? '\u263C' : '\u263D'; /* sun when dark, moon when light */
+        btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+      }
+      sync();
+      btn.addEventListener('click', function () {
+        var nowDark = document.documentElement.classList.toggle('dark');
+        try { localStorage.setItem('theme', nowDark ? 'dark' : 'light'); } catch (e) {}
+        sync();
+      });
+    })();
+  </script>
 </body>
 </html>
