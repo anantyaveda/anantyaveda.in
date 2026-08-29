@@ -83,12 +83,10 @@
     .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   </style>
   <script>
-    /* Apply saved/preferred theme before paint to avoid flash of wrong theme */
+    /* Apply saved theme before paint. Default is light; only go dark if explicitly chosen. */
     (function () {
       try {
-        var saved = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (saved === 'dark' || (!saved && prefersDark)) {
+        if (localStorage.getItem('theme') === 'dark') {
           document.documentElement.classList.add('dark');
         }
       } catch (e) {}
