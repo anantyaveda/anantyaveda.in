@@ -176,6 +176,7 @@
     <section class="products" aria-labelledby="products-heading">
       <div class="tablist" role="tablist" aria-label="Product categories">
         <button class="tab" role="tab" aria-selected="true" data-cat="all">All</button>
+        <button class="tab" role="tab" aria-selected="false" data-cat="skin">Skin Care</button>
         <button class="tab" role="tab" aria-selected="false" data-cat="face">Face Care</button>
         <button class="tab" role="tab" aria-selected="false" data-cat="hair">Hair Care</button>
         <button class="tab" role="tab" aria-selected="false" data-cat="body">Body Care</button>
@@ -205,6 +206,11 @@
     /* Product list with category tabs */
     (function () {
       var products = [
+        { name: 'Shat Dhaut Ghrit', cat: 'skin', desc: '100x-washed medicated ghee — cooling, deeply healing clarified butter for sensitive and irritated skin.', price: '₹0' },
+        { name: 'Lip Balm', cat: 'skin', desc: 'Nourishing herbal lip balm that softens and protects dry, chapped lips.', price: '₹0' },
+        { name: 'Manjishtha Mulethi Cream', cat: 'skin', desc: 'Brightening cream with manjishtha and liquorice (mulethi) for even, glowing skin tone.', price: '₹0' },
+        { name: 'Manjishtha Lip Balm', cat: 'skin', desc: 'Tinted herbal lip balm enriched with manjishtha for naturally rosy lips.', price: '₹0' },
+        { name: 'Manjishtha Soap', cat: 'skin', desc: 'Ayurvedic cleansing bar with manjishtha to clarify and brighten the skin.', price: '₹0' },
         { name: 'Kumkumadi Glow Serum', cat: 'face', desc: 'Ayurvedic saffron-infused facial serum for radiant, even-toned skin.', price: '₹699' },
         { name: 'Rose & Aloe Face Wash', cat: 'face', desc: 'Gentle daily cleanser with rose water and soothing aloe vera.', price: '₹349' },
         { name: 'Neem-Turmeric Face Pack', cat: 'face', desc: 'Purifying clay mask to calm breakouts and brighten the complexion.', price: '₹499' },
