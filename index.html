@@ -33,6 +33,15 @@
       padding: 1.5rem;
     }
     .card { max-width: 820px; width: 100%; }
+    .brand-logo {
+      width: auto;
+      max-width: 240px;
+      max-height: 240px;
+      object-fit: contain;
+      margin: 0 auto 1.25rem;
+      border-radius: 12px;
+      display: block;
+    }
     h1 {
       font-size: clamp(2rem, 6vw, 3.25rem);
       letter-spacing: 0.04em;
@@ -175,6 +184,7 @@
 <body>
   <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme"></button>
   <main class="card">
+    <img class="brand-logo" src="logo.jpg" alt="Anantya Veda logo — Natural, Pure, Timeless" />
     <h1><span class="domain">anantyaveda</span>.in</h1>
     <p class="tagline">Our website is currently under construction.<br />Please check back soon.</p>
     <span class="badge">Under Construction</span>
